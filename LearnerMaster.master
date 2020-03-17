@@ -1,0 +1,198 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="LearnerMaster.master.cs"
+    Inherits="LearnerMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1">
+    <title>Online Learning</title>
+    <link href="../css/main.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        .btnCursor
+        {
+            cursor: pointer;
+        }
+        .textbox
+        {
+            width: 60%;
+            padding: 12px 20px;
+            margin: 1px 0;
+            box-sizing: border-box;
+            border: 2px solid #c0c0c0;
+        }
+        .button
+        {
+            font-size: 15px;
+            font-weight: bold;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        
+        
+        
+        .style1
+        {
+            height: 71px;
+            background-color: #076fe2;
+            margin-top: 0px;
+        }
+        .style6
+        {
+            height: 48px;
+            background-color: orange;
+        }
+        .style7
+        {
+            height: 209px;
+        }
+        .style10
+        {
+            width: 100%;
+        }
+        .style11
+        {
+            width: 880px;
+        }
+        .style12
+        {
+            font-weight: bold;
+        }
+        .footerCss
+        {
+            font-size: 15px;
+            border: none;
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            min-height: 40px;
+        }
+        .cssFontBold
+        {
+            font-size: 20px;
+            font-weight: bolder;
+        }
+        .btnBlue
+        {
+            background-color: #076FE2;
+            color: White;
+            font-size: 15px;
+            font-weight: bold;
+            border: none;
+            padding: 10px 25px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+         .buttonGreen
+        {
+            font-size: 15px;
+            font-weight: bold;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 25px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body text="#ffffff">
+    <form id="form1" runat="server">
+    <div>
+        <div class="style1">
+            <table style="width: 100%; padding-top: 10px; padding-bottom: 10px">
+                <tr>
+                    <td align="left">
+                        &nbsp;&nbsp;&nbsp;
+                        <asp:Image ID="imgLogo" runat="server" ImageUrl="~/images/logo.png" />
+                    </td>
+                    <td align="right">
+                        <asp:Label ID="Label6" runat="server" Font-Bold="True" Font-Names="helvetica" Font-Size="15pt"
+                            Text="Welcome"></asp:Label>
+                        &nbsp;<asp:Label ID="lbluser" runat="server" Font-Bold="True" Font-Names="helvetica"
+                            Font-Size="15pt"></asp:Label>
+                    </td>
+                    <td align="center">
+                        <asp:Button ID="btnLogOut" runat="server" BackColor="#076FE2" BorderColor="White"
+                            BorderWidth="2px" Font-Bold="True" Font-Names="helvetica" ForeColor="White" Height="30px"
+                            CssClass="btnCursor" Text="Logout" Width="100px" OnClick="btnLogOut_Click" ValidationGroup="logout" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="style6">
+            <table style="width: 100%; text-align: right; padding-top: 10px;">
+                <tr>
+                    <td style="width: 200px; padding-right: 20px;">
+                    </td>
+                    <td>
+                        <asp:LinkButton ID="lnkProfile" runat="server" Font-Names="helvetica" Font-Size="15pt"
+                            OnClick="lnkProfile_Click" Font-Underline="False" ForeColor="White" ValidationGroup="top">MY PROFILE</asp:LinkButton>
+                    </td>
+                    <td>
+                        <asp:LinkButton ID="btnAbout" runat="server" Font-Names="helvetica" Font-Size="15pt"
+                            Font-Underline="False" ForeColor="White" OnClick="btnAbout_Click" ValidationGroup="top">ABOUT US</asp:LinkButton>
+                    </td>
+                    <td>
+                        <asp:LinkButton ID="btnCourse" runat="server" Font-Names="helvetica" Font-Size="15pt"
+                            Font-Underline="False" ForeColor="White" OnClick="btnCourse_Click" ValidationGroup="top">COURSES</asp:LinkButton>
+                    </td>
+                    <td>
+                        <asp:LinkButton ID="lnkTrainerList" runat="server" Font-Names="helvetica" Font-Size="15pt"
+                            OnClick="lnkTrainerList_Click" Font-Underline="False" ForeColor="White" ValidationGroup="top">TRAINERS</asp:LinkButton>
+                    </td>
+                    <td>
+                        <asp:LinkButton ID="lnkFavuorite" runat="server" Font-Names="helvetica" Font-Size="15pt"
+                            Font-Underline="False" ForeColor="White" OnClick="lnkFavuorite_Click" ValidationGroup="top">FAVOURITE COURSES</asp:LinkButton>
+                    </td>
+                    <td>
+                        <asp:LinkButton ID="lnkContact" runat="server" Font-Names="helvetica" Font-Size="15pt"
+                            OnClick="lnkContact_Click" Font-Underline="False" ForeColor="White" ValidationGroup="top">GENERATE QUERY</asp:LinkButton>
+                    </td>
+                    <td style="width: 20px;">
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div style="min-height: 385px;">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    <div style="background-color: #082e56;" class="footerCss">
+        <table>
+            <tr>
+                <td style="width: 80%; text-align: left">
+                    <asp:Label ID="Label3" runat="server" CssClass="cssFontBold" ForeColor="Orange" Text="About Online Learning"></asp:Label>
+                </td>
+                <td style="width: 20%; text-align: left">
+                    <asp:Label ID="Label2" runat="server" CssClass="cssFontBold" ForeColor="Orange" Text="Contact Us"></asp:Label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Online learning is a free learning site for everyone
+                    <br />
+                    where you can learn without needing to attend
+                    <br />
+                    classes on campus. The main goal of this site is to<br />
+                    provide a free education to anyone, anywhere.
+                </td>
+                <td style="width: 20%; text-align: left">
+                    Delhi<br />
+                    <br />
+                    (+91) 99999 99999, 88888 00000<br />
+                    <br />
+                    mail@onlinelearning.com
+                </td>
+            </tr>
+        </table>
+    </div>
+    </form>
+</body>
+</html>
